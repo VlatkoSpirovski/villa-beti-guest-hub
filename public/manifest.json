@@ -1,0 +1,11 @@
+{
+  "name": "Villa Beti Guest Hub",
+  "short_name": "Villa Beti",
+  "description": "Mobile guest guide for Villa Beti in Mavrovo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#1c1917",
+  "orientation": "portrait-primary",
+  "categories": ["travel", "lifestyle"]
+}
