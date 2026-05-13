@@ -327,7 +327,7 @@ export default async function Home({
                 <div
                     role="img"
                     aria-label="Villa Beti logo"
-                    className="h-[4rem] w-[4rem] shrink-0 rounded-full bg-white bg-cover bg-center shadow-[0_10px_28px_rgba(0,0,0,.35)] ring-2 ring-white/90"
+                    className="h-[5rem] w-[5rem] shrink-0 rounded-full bg-white bg-cover bg-center shadow-[0_10px_28px_rgba(0,0,0,.35)] ring-2 ring-white/90"
                     style={{ backgroundImage: `url(${logoPhoto})` }}
                 />
 
@@ -336,13 +336,15 @@ export default async function Home({
                     Digital Concierge
                   </p>
 
-                  <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.22em] text-white/75">
+                  <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.22em] text-orange-100">
                     {t.tagline}
                   </p>
                 </div>
               </div>
 
-              <LanguageNav lang={lang} path="/" variant="light" />
+              <div className="absolute right-6 top-14 -translate-y-1/2">
+                <LanguageNav lang={lang} path="/" variant="light" />
+              </div>
             </header>
 
             <section className="mt-auto max-w-[19rem] pb-12">
@@ -354,7 +356,7 @@ export default async function Home({
                 Villa Beti
               </h1>
 
-              <p className="mt-5 max-w-[18.5rem] text-[15px] leading-7 text-white/90 drop-shadow-[0_2px_12px_rgba(0,0,0,.8)]">
+              <p className="mt-5 max-w-[18.5rem] text-[15px] leading-7 text-orange-100 drop-shadow-[0_2px_12px_rgba(0,0,0,.8)]">
                 {t.subtitle}
               </p>
             </section>
