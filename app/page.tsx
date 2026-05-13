@@ -287,44 +287,56 @@ export default async function Home({
   return (
     <main className="flex min-h-dvh items-start justify-center bg-[#343433] text-[#292621]">
       <section className="flex min-h-dvh w-full max-w-[430px] flex-col overflow-hidden bg-[#f7f1e8] shadow-2xl shadow-black/5">
-        <div className="relative min-h-[370px] overflow-hidden rounded-b-[2.25rem] bg-[#f7f1e8]">
+        <div className="relative h-[410px] overflow-hidden bg-[#211f1c]">
+          {/* Background image */}
           <div
               aria-hidden="true"
-              className="absolute inset-0 bg-cover bg-center scale-[1.01]"
+              className="absolute inset-0 scale-[1.02] bg-cover bg-center"
               style={{
                 backgroundImage: `url(${mavrovoPhoto})`,
               }}
           />
 
+          {/* Balanced photo overlay */}
           <div
               aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/22 to-[#f7f1e8]"
+              className="absolute inset-0 bg-black/35"
           />
 
+          {/* Left text readability */}
           <div
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-40"
+              className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.62)_0%,rgba(0,0,0,.34)_45%,rgba(0,0,0,.12)_100%)]"
           />
 
-          <div className="relative px-5 pt-6 text-white">
+          {/* Top soft vignette */}
+          <div
+              aria-hidden="true"
+              className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/35 to-transparent"
+          />
+
+          {/* Very small bottom shadow only, not beige opacity */}
+          <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/28 to-transparent"
+          />
+
+          <div className="relative z-10 flex h-full flex-col px-6 pt-6 text-white">
             <header className="flex items-start justify-between gap-3">
               <div className="flex min-w-0 items-center gap-3">
                 <div
                     role="img"
                     aria-label="Villa Beti logo"
-                    className="h-[3.75rem] w-[3.75rem] shrink-0 rounded-full bg-white bg-cover bg-center shadow-[0_10px_30px_rgba(0,0,0,.32)] ring-2 ring-white/90"
+                    className="h-[4rem] w-[4rem] shrink-0 rounded-full bg-white bg-cover bg-center shadow-[0_10px_28px_rgba(0,0,0,.35)] ring-2 ring-white/90"
                     style={{ backgroundImage: `url(${logoPhoto})` }}
                 />
 
-                <div className="min-w-0 font-serif text-white">
+                <div className="min-w-0">
+                  <p className="font-serif text-[1.45rem] font-semibold leading-none text-white drop-shadow-[0_3px_14px_rgba(0,0,0,.7)]">
+                    Digital Concierge
+                  </p>
 
-                  <div className="mt-1.5 flex items-center">
-                    <p className="text-[1.05rem] font-semibold leading-none text-white/90 drop-shadow-[0_2px_12px_rgba(0,0,0,.5)]">
-                      Digital Concierge
-                    </p>
-                  </div>
-
-                  <p className="mt-2 font-sans text-[10px] font-medium uppercase tracking-[0.12em] text-white/72">
+                  <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.22em] text-white/75">
                     {t.tagline}
                   </p>
                 </div>
@@ -333,22 +345,23 @@ export default async function Home({
               <LanguageNav lang={lang} path="/" variant="light" />
             </header>
 
-            <section className="mt-16">
-              <p className="font-serif text-[2.15rem] font-semibold leading-none text-white/95 drop-shadow-[0_3px_14px_rgba(0,0,0,.5)]">
+            <section className="mt-auto max-w-[19rem] pb-12">
+              <p className="font-serif text-[2.35rem] font-medium leading-[0.95] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,.8)]">
                 {t.welcome}
               </p>
 
-              <h1 className="mt-1 font-serif text-[3.45rem] font-bold leading-[0.9] text-white drop-shadow-[0_5px_18px_rgba(0,0,0,.55)]">
+              <h1 className="mt-1 font-serif text-[3.9rem] font-bold leading-[0.88] tracking-[-0.035em] text-white drop-shadow-[0_7px_24px_rgba(0,0,0,.9)]">
                 Villa Beti
               </h1>
 
-              <p className="mt-4 max-w-[20rem] text-[15px] leading-6 text-white/90 [text-shadow:0_2px_10px_rgba(0,0,0,.45)]">
+              <p className="mt-5 max-w-[18.5rem] text-[15px] leading-7 text-white/90 drop-shadow-[0_2px_12px_rgba(0,0,0,.8)]">
                 {t.subtitle}
               </p>
             </section>
           </div>
         </div>
-        <section className="grid grid-cols-2 gap-3 px-5 pb-5 pt-5">
+
+        <section className="-mt-2 grid grid-cols-2 gap-3 px-5 pb-5 pt-7">
           {tiles.map((tile) => (
             <Link
               key={`${tile.href}-${tile.title}`}
