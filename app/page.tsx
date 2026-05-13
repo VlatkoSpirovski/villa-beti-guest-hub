@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { SVGProps } from "react";
+import { LanguageNav } from "./components/LanguageNav";
 import { getLang, type Lang, withLang } from "./lib/i18n";
 
 const mavrovoPhoto = "/mavrovo-panoramic-summer.jpg";
@@ -8,6 +9,7 @@ const logoPhoto = "/villa-beti-logo.jpg";
 const copy = {
   en: {
     welcome: "Welcome to",
+    tagline: "Your stay, simplified",
     subtitle:
       "Your digital concierge for WiFi, arrival, house info, Mavrovo tips and direct host contact.",
     tiles: [
@@ -15,12 +17,15 @@ const copy = {
       ["Contact", "We are here"],
       ["Check-in/out", "Arrival & departure"],
       ["House Guide", "All about the villa"],
-      ["Restaurants", "Food & shops"],
+      ["Restaurants", "Food & coffee"],
       ["Activities", "Enjoy Mavrovo"],
+      ["Essentials", "ATM, pharmacy, fuel"],
+      ["Reviews", "Private feedback"],
     ],
   },
   de: {
     welcome: "Willkommen in",
+    tagline: "Ihr Aufenthalt, einfach gemacht",
     subtitle:
       "Ihr digitaler Concierge fuer WLAN, Anreise, Hausinfo, Mavrovo-Tipps und direkten Gastgeberkontakt.",
     tiles: [
@@ -28,12 +33,143 @@ const copy = {
       ["Kontakt", "Wir sind fuer Sie da"],
       ["Check-in/out", "Ankunft & Abreise"],
       ["Hausguide", "Alles zur Villa"],
-      ["Restaurants", "Essen & Shops"],
+      ["Restaurants", "Essen & Kaffee"],
       ["Aktivitaeten", "Erleben Sie Mavrovo"],
+      ["Praktisches", "ATM, Apotheke, Tanken"],
+      ["Bewertung", "Privates Feedback"],
+    ],
+  },
+  fr: {
+    welcome: "Bienvenue à",
+    tagline: "Votre sejour, simplifie",
+    subtitle:
+      "Votre concierge numérique pour le WiFi, l'arrivée, les infos maison, les conseils Mavrovo et le contact direct avec l'hôte.",
+    tiles: [
+      ["WiFi", "Connexion"],
+      ["Contact", "Nous sommes là"],
+      ["Check-in/out", "Arrivée et départ"],
+      ["Guide Maison", "Tout sur la villa"],
+      ["Restaurants", "Repas et café"],
+      ["Activités", "Profiter de Mavrovo"],
+      ["Essentiels", "ATM, pharmacie, carburant"],
+      ["Avis", "Retour prive"],
+    ],
+  },
+  cs: {
+    welcome: "Vítejte ve",
+    tagline: "Vas pobyt, jednoduse",
+    subtitle:
+      "Váš digitální concierge pro WiFi, příjezd, informace o domě, tipy na Mavrovo a přímý kontakt s hostitelem.",
+    tiles: [
+      ["WiFi", "Připojit"],
+      ["Kontakt", "Jsme tady"],
+      ["Check-in/out", "Příjezd a odjezd"],
+      ["Průvodce domem", "Vše o vile"],
+      ["Restaurace", "Jídlo a káva"],
+      ["Aktivity", "Užijte si Mavrovo"],
+      ["Prakticke", "ATM, lékárna, palivo"],
+      ["Hodnoceni", "Soukroma zpetna vazba"],
+    ],
+  },
+  pl: {
+    welcome: "Witamy w",
+    tagline: "Twoj pobyt, prosciej",
+    subtitle:
+      "Twój cyfrowy concierge do WiFi, przyjazdu, informacji o domu, wskazówek Mavrovo i kontaktu z gospodarzem.",
+    tiles: [
+      ["WiFi", "Połącz"],
+      ["Kontakt", "Jesteśmy tutaj"],
+      ["Check-in/out", "Przyjazd i wyjazd"],
+      ["Przewodnik", "Wszystko o willi"],
+      ["Restauracje", "Jedzenie i kawa"],
+      ["Atrakcje", "Odkryj Mavrovo"],
+      ["Niezbedne", "ATM, apteka, paliwo"],
+      ["Opinia", "Prywatna wiadomosc"],
+    ],
+  },
+  es: {
+    welcome: "Bienvenido a",
+    tagline: "Tu estancia, simplificada",
+    subtitle:
+      "Tu conserje digital para WiFi, llegada, información de la casa, consejos de Mavrovo y contacto directo con el anfitrión.",
+    tiles: [
+      ["WiFi", "Conectar"],
+      ["Contacto", "Estamos aquí"],
+      ["Check-in/out", "Llegada y salida"],
+      ["Guía Casa", "Todo sobre la villa"],
+      ["Restaurantes", "Comida y café"],
+      ["Actividades", "Disfruta Mavrovo"],
+      ["Esenciales", "ATM, farmacia, combustible"],
+      ["Resena", "Comentario privado"],
+    ],
+  },
+  be: {
+    welcome: "Welkom bij",
+    tagline: "Uw verblijf, eenvoudig gemaakt",
+    subtitle:
+      "Uw digitale concierge voor WiFi, aankomst, huisinformatie, Mavrovo tips en direct contact met de host.",
+    tiles: [
+      ["WiFi", "Verbinden"],
+      ["Contact", "Wij zijn er"],
+      ["Check-in/out", "Aankomst & vertrek"],
+      ["Huisgids", "Alles over de villa"],
+      ["Restaurants", "Eten & koffie"],
+      ["Activiteiten", "Geniet van Mavrovo"],
+      ["Praktisch", "ATM, apotheek, brandstof"],
+      ["Review", "Prive feedback"],
+    ],
+  },
+  nl: {
+    welcome: "Welkom bij",
+    tagline: "Je verblijf, eenvoudig gemaakt",
+    subtitle:
+      "Je digitale concierge voor WiFi, aankomst, huisinformatie, Mavrovo tips en direct contact met de host.",
+    tiles: [
+      ["WiFi", "Verbinden"],
+      ["Contact", "We zijn er"],
+      ["Check-in/out", "Aankomst & vertrek"],
+      ["Huisgids", "Alles over de villa"],
+      ["Restaurants", "Eten & koffie"],
+      ["Activiteiten", "Geniet van Mavrovo"],
+      ["Praktisch", "ATM, apotheek, brandstof"],
+      ["Review", "Prive feedback"],
+    ],
+  },
+  sq: {
+    welcome: "Mirë se vini në",
+    tagline: "Qendrimi juaj, me i thjeshte",
+    subtitle:
+      "Concierge juaj digjital për WiFi, ardhje, informacione për shtëpinë, këshilla për Mavrovo dhe kontakt direkt me hostin.",
+    tiles: [
+      ["WiFi", "Lidhu"],
+      ["Kontakt", "Jemi këtu"],
+      ["Check-in/out", "Ardhje dhe largim"],
+      ["Udhëzues shtëpie", "Gjithçka për vilën"],
+      ["Restorante", "Ushqim dhe kafe"],
+      ["Aktivitete", "Shijoni Mavrovën"],
+      ["Esenciale", "ATM, barnatore, karburant"],
+      ["Vleresim", "Feedback privat"],
+    ],
+  },
+  tr: {
+    welcome: "Hoş geldiniz",
+    tagline: "Konaklamaniz, kolaylastirildi",
+    subtitle:
+      "WiFi, varış, ev bilgileri, Mavrovo ipuçları ve ev sahibiyle doğrudan iletişim için dijital concierge.",
+    tiles: [
+      ["WiFi", "Bağlan"],
+      ["İletişim", "Buradayız"],
+      ["Check-in/out", "Varış ve ayrılış"],
+      ["Ev Rehberi", "Villa hakkında"],
+      ["Restoranlar", "Yemek ve kahve"],
+      ["Aktiviteler", "Mavrovo keyfi"],
+      ["Temel bilgiler", "ATM, eczane, yakıt"],
+      ["Yorum", "Ozel geri bildirim"],
     ],
   },
   mk: {
     welcome: "Добредојдовте во",
+    tagline: "Вашиот престој, поедноставен",
     subtitle:
       "Ваш дигитален водич за WiFi, пристигнување, информации за вилата, совети за Маврово и директен контакт.",
     tiles: [
@@ -41,12 +177,15 @@ const copy = {
       ["Контакт", "Тука сме"],
       ["Пријава/одјава", "Пристигнување и заминување"],
       ["Водич", "Се за вилата"],
-      ["Ресторани", "Храна и маркети"],
+      ["Ресторани", "Храна и кафе"],
       ["Активности", "Уживајте во Маврово"],
+      ["Основно", "Банкомат, аптека, гориво"],
+      ["Оценка", "Приватен фидбек"],
     ],
   },
 } satisfies Record<Lang, {
   welcome: string;
+  tagline: string;
   subtitle: string;
   tiles: string[][];
 }>;
@@ -104,6 +243,19 @@ const icons = {
       <path d="M15 4c3 1.2 4 3.4 4 6h-4" />
     </svg>
   ),
+  essentials: (props: SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="M12 5v14" />
+      <path d="M5 12h14" />
+      <circle cx="12" cy="12" r="8" />
+    </svg>
+  ),
+  review: (props: SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="M6 5.5A2.5 2.5 0 0 1 8.5 3h7A2.5 2.5 0 0 1 18 5.5v8A2.5 2.5 0 0 1 15.5 16H12l-4.5 4v-4A2.5 2.5 0 0 1 5 13.5v-8Z" />
+      <path d="m9 8.8 2 2 4-4" />
+    </svg>
+  ),
 };
 
 const tileBase = [
@@ -113,12 +265,8 @@ const tileBase = [
   { icon: icons.home, href: "/house-guide" },
   { icon: icons.dining, href: "/restaurants" },
   { icon: icons.map, href: "/local-gems" },
-];
-
-const languageLinks: Array<{ label: string; href: string; value: Lang }> = [
-  { label: "EN", href: "/", value: "en" },
-  { label: "DE", href: "/?lang=de", value: "de" },
-  { label: "MK", href: "/?lang=mk", value: "mk" },
+  { icon: icons.essentials, href: "/essentials" },
+  { icon: icons.review, href: "/reviews" },
 ];
 
 export default async function Home({
@@ -168,47 +316,29 @@ export default async function Home({
                     style={{ backgroundImage: `url(${logoPhoto})` }}
                 />
 
-                <div className="min-w-0">
-                  <p className="text-[11px] font-black uppercase tracking-[0.34em] text-white/90 drop-shadow-[0_2px_10px_rgba(0,0,0,.5)]">
-                    Villa Beti
-                  </p>
+                <div className="min-w-0 font-serif text-white">
 
-                  <div className="mt-1.5 flex items-center gap-2">
-                    <span className="h-px w-7 rounded-full bg-white/55" />
-                    <p className="font-serif text-[1.22rem] italic leading-none text-white/95 drop-shadow-[0_2px_12px_rgba(0,0,0,.5)]">
+                  <div className="mt-1.5 flex items-center">
+                    <p className="text-[1.05rem] font-semibold leading-none text-white/90 drop-shadow-[0_2px_12px_rgba(0,0,0,.5)]">
                       Digital Concierge
                     </p>
                   </div>
 
-                  <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/72">
-                    Your stay, simplified
+                  <p className="mt-2 font-sans text-[10px] font-medium uppercase tracking-[0.12em] text-white/72">
+                    {t.tagline}
                   </p>
                 </div>
               </div>
 
-              <nav className="flex shrink-0 gap-1.5" aria-label="Language">
-                {languageLinks.map((item) => (
-                    <Link
-                        key={item.value}
-                        href={item.href}
-                        className={`grid h-7 min-w-7 place-items-center rounded-full px-2 text-[9px] font-black shadow-sm transition ${
-                            lang === item.value
-                                ? "bg-white text-[#292621]"
-                                : "bg-white/16 text-white ring-1 ring-white/20 backdrop-blur-md"
-                        }`}
-                    >
-                      {item.label}
-                    </Link>
-                ))}
-              </nav>
+              <LanguageNav lang={lang} path="/" variant="light" />
             </header>
 
             <section className="mt-16">
-              <p className="font-serif text-[2rem] italic leading-none text-white/95 drop-shadow-[0_3px_14px_rgba(0,0,0,.5)]">
-                Welcome to
+              <p className="font-serif text-[2.15rem] font-semibold leading-none text-white/95 drop-shadow-[0_3px_14px_rgba(0,0,0,.5)]">
+                {t.welcome}
               </p>
 
-              <h1 className="mt-1 font-serif text-[3.45rem] font-black leading-[0.9] tracking-[-0.045em] text-white drop-shadow-[0_5px_18px_rgba(0,0,0,.55)]">
+              <h1 className="mt-1 font-serif text-[3.45rem] font-bold leading-[0.9] text-white drop-shadow-[0_5px_18px_rgba(0,0,0,.55)]">
                 Villa Beti
               </h1>
 
@@ -228,7 +358,7 @@ export default async function Home({
               <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-white/90 text-[#6b553a] shadow-sm">
                 <tile.icon className="h-6 w-6 stroke-current stroke-[1.9]" />
               </span>
-              <span className="mt-4 flex min-h-[1.75rem] items-center text-[15px] font-black leading-none">
+              <span className="mt-4 flex min-h-[1.75rem] items-center text-[15px] font-bold leading-none">
                 {tile.title}
               </span>
               <span className="mt-1.5 line-clamp-2 min-h-7 text-[12px] font-medium leading-[1.15] text-[#5f5851]">

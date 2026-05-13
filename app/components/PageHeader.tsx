@@ -15,7 +15,7 @@ export function PageHeader({
     <header className="flex items-center justify-between gap-3">
       <Link
         href={withLang("/", lang)}
-        className="inline-flex min-h-9 items-center rounded-full bg-white/75 px-4 text-sm font-black text-[#7d6047] shadow-sm ring-1 ring-[#e2d6c8]"
+        className="inline-flex min-h-9 items-center rounded-full bg-white/75 px-4 text-sm font-bold text-[#7d6047] shadow-sm ring-1 ring-[#e2d6c8]"
       >
         {backLabel}
       </Link>

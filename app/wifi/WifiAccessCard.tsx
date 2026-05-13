@@ -73,19 +73,19 @@ export function WifiAccessCard({
             <WifiIcon />
           </span>
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.26em] text-[#96785d]">Villa Beti</p>
-            <h1 className="mt-1 font-serif text-3xl italic leading-none">{copy.title}</h1>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#96785d]">Villa Beti</p>
+            <h1 className="mt-1 font-sans text-3xl font-bold leading-none">{copy.title}</h1>
           </div>
         </div>
 
         <div className="mt-6 space-y-3">
           <div className="rounded-2xl bg-[#f7f1e8] p-4 ring-1 ring-[#e5dacd]">
-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#806850]">{copy.networkLabel}</p>
-            <p className="mt-2 break-all text-xl font-black tracking-tight">{network}</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#806850]">{copy.networkLabel}</p>
+            <p className="mt-2 break-all text-xl font-bold">{network}</p>
             <button
               type="button"
               onClick={() => copyText(network, "network")}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2d2922] px-4 py-3 text-sm font-black text-white shadow-sm"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2d2922] px-4 py-3 text-sm font-bold text-white shadow-sm"
             >
               <CopyIcon />
               {copied === "network" ? copy.copied : copy.copyNetwork}
@@ -93,14 +93,14 @@ export function WifiAccessCard({
           </div>
 
           <div className="rounded-2xl bg-[#f7f1e8] p-4 ring-1 ring-[#e5dacd]">
-            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#806850]">{copy.passwordLabel}</p>
-            <p className="mt-2 break-all font-mono text-[1.35rem] font-black leading-tight tracking-[-0.04em]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#806850]">{copy.passwordLabel}</p>
+            <p className="mt-2 break-all text-[1.25rem] font-bold leading-tight">
               {password}
             </p>
             <button
               type="button"
               onClick={() => copyText(password, "password")}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2d2922] px-4 py-3 text-sm font-black text-white shadow-sm"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2d2922] px-4 py-3 text-sm font-bold text-white shadow-sm"
             >
               <CopyIcon />
               {copied === "password" ? copy.copied : copy.copyPassword}
@@ -111,7 +111,7 @@ export function WifiAccessCard({
         <button
           type="button"
           onClick={() => copyText(wifiDetails, "share")}
-          className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#e9ddcf] px-4 py-3 text-sm font-black text-[#3a3128] shadow-sm ring-1 ring-[#dfd1c2]"
+          className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#e9ddcf] px-4 py-3 text-sm font-bold text-[#3a3128] shadow-sm ring-1 ring-[#dfd1c2]"
         >
           <ShareIcon />
           {copied === "share" ? copy.copied : copy.share}
@@ -119,7 +119,7 @@ export function WifiAccessCard({
       </div>
 
       <div className="rounded-[1.75rem] bg-white/72 p-4 text-center shadow-sm ring-1 ring-[#e3d8cb]">
-        <p className="text-[11px] font-black uppercase tracking-[0.22em] text-[#806850]">{copy.qrLabel}</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#806850]">{copy.qrLabel}</p>
         <div
           role="img"
           aria-label="WiFi QR code"

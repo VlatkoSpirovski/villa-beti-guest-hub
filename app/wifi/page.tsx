@@ -1,8 +1,8 @@
 import { PageHeader } from "../components/PageHeader";
-import { getLang, type Lang } from "../lib/i18n";
+import { completeCopy, getLang, type Lang } from "../lib/i18n";
 import { WifiAccessCard } from "./WifiAccessCard";
 
-const copy = {
+const copy = completeCopy({
   en: {
     back: "Villa Beti",
     title: "WiFi access",
@@ -25,6 +25,94 @@ const copy = {
     share: "WLAN Daten teilen",
     qrLabel: "Fuer ein anderes Geraet",
   },
+  fr: {
+    back: "Villa Beti",
+    title: "Acces WiFi",
+    networkLabel: "Reseau",
+    passwordLabel: "Mot de passe",
+    copyNetwork: "Copier le reseau",
+    copyPassword: "Copier le mot de passe",
+    copied: "Copie",
+    share: "Partager les infos WiFi",
+    qrLabel: "Pour un autre appareil",
+  },
+  cs: {
+    back: "Villa Beti",
+    title: "Pristup k WiFi",
+    networkLabel: "Sit",
+    passwordLabel: "Heslo",
+    copyNetwork: "Kopirovat sit",
+    copyPassword: "Kopirovat heslo",
+    copied: "Zkopirovano",
+    share: "Sdilet udaje WiFi",
+    qrLabel: "Pro jine zarizeni",
+  },
+  pl: {
+    back: "Villa Beti",
+    title: "Dostep do WiFi",
+    networkLabel: "Siec",
+    passwordLabel: "Haslo",
+    copyNetwork: "Kopiuj siec",
+    copyPassword: "Kopiuj haslo",
+    copied: "Skopiowano",
+    share: "Udostepnij dane WiFi",
+    qrLabel: "Dla innego urzadzenia",
+  },
+  es: {
+    back: "Villa Beti",
+    title: "Acceso WiFi",
+    networkLabel: "Red",
+    passwordLabel: "Contrasena",
+    copyNetwork: "Copiar red",
+    copyPassword: "Copiar contrasena",
+    copied: "Copiado",
+    share: "Compartir datos WiFi",
+    qrLabel: "Para otro dispositivo",
+  },
+  be: {
+    back: "Villa Beti",
+    title: "WiFi toegang",
+    networkLabel: "Netwerk",
+    passwordLabel: "Wachtwoord",
+    copyNetwork: "Netwerk kopieren",
+    copyPassword: "Wachtwoord kopieren",
+    copied: "Gekopieerd",
+    share: "WiFi gegevens delen",
+    qrLabel: "Voor een ander toestel",
+  },
+  nl: {
+    back: "Villa Beti",
+    title: "WiFi toegang",
+    networkLabel: "Netwerk",
+    passwordLabel: "Wachtwoord",
+    copyNetwork: "Netwerk kopieren",
+    copyPassword: "Wachtwoord kopieren",
+    copied: "Gekopieerd",
+    share: "WiFi gegevens delen",
+    qrLabel: "Voor een ander apparaat",
+  },
+  sq: {
+    back: "Villa Beti",
+    title: "Qasje WiFi",
+    networkLabel: "Rrjeti",
+    passwordLabel: "Fjalekalimi",
+    copyNetwork: "Kopjo rrjetin",
+    copyPassword: "Kopjo fjalekalimin",
+    copied: "U kopjua",
+    share: "Shpernda te dhenat WiFi",
+    qrLabel: "Per nje pajisje tjeter",
+  },
+  tr: {
+    back: "Villa Beti",
+    title: "WiFi erisimi",
+    networkLabel: "Ag",
+    passwordLabel: "Sifre",
+    copyNetwork: "Agi kopyala",
+    copyPassword: "Sifreyi kopyala",
+    copied: "Kopyalandi",
+    share: "WiFi bilgilerini paylas",
+    qrLabel: "Baska bir cihaz icin",
+  },
   mk: {
     back: "Villa Beti",
     title: "WiFi пристап",
@@ -46,7 +134,7 @@ const copy = {
   copied: string;
   share: string;
   qrLabel: string;
-}>;
+}>);
 
 const wifi = {
   network: "Telekom-578385",

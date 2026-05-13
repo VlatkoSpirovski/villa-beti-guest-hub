@@ -1,16 +1,10 @@
 import { PageHeader } from "../components/PageHeader";
-import { getLang, type Lang } from "../lib/i18n";
+import { completeCopy, getLang, type Lang } from "../lib/i18n";
 
 const hostPhone = "+38978459001";
 const hostWhatsapp = "https://wa.me/38978459001";
 
-const emergency = [
-  { label: "Emergency", value: "112", href: "tel:112" },
-  { label: "Police", value: "192", href: "tel:192" },
-  { label: "Ambulance", value: "194", href: "tel:194" },
-];
-
-const copy = {
+const copy = completeCopy({
   en: {
     back: "Villa Beti",
     eyebrow: "Contact",
@@ -20,6 +14,11 @@ const copy = {
     call: "Call Host",
     whatsapp: "WhatsApp",
     emergency: "Emergency numbers",
+    emergencyItems: [
+      ["Emergency", "112", "tel:112"],
+      ["Police", "192", "tel:192"],
+      ["Ambulance", "194", "tel:194"],
+    ],
     host: "Host support",
   },
   de: {
@@ -31,7 +30,140 @@ const copy = {
     call: "Gastgeber anrufen",
     whatsapp: "WhatsApp",
     emergency: "Notrufnummern",
+    emergencyItems: [
+      ["Notruf", "112", "tel:112"],
+      ["Polizei", "192", "tel:192"],
+      ["Krankenwagen", "194", "tel:194"],
+    ],
     host: "Gastgeber Hilfe",
+  },
+  fr: {
+    back: "Villa Beti",
+    eyebrow: "Contact",
+    title: "Besoin de quelque chose ?",
+    intro:
+      "Envoyez un message ou appelez l'hote pour les restaurants, les courses ou tout ce qui peut ameliorer votre sejour.",
+    call: "Appeler l'hote",
+    whatsapp: "WhatsApp",
+    emergency: "Numeros d'urgence",
+    emergencyItems: [
+      ["Urgence", "112", "tel:112"],
+      ["Police", "192", "tel:192"],
+      ["Ambulance", "194", "tel:194"],
+    ],
+    host: "Assistance hote",
+  },
+  cs: {
+    back: "Villa Beti",
+    eyebrow: "Kontakt",
+    title: "Potrebujete neco?",
+    intro:
+      "Napiste nebo zavolejte hostiteli kvuli restauracim, nakupum nebo cemukoli, co vam zlepsi pobyt.",
+    call: "Zavolat hostiteli",
+    whatsapp: "WhatsApp",
+    emergency: "Tisnova cisla",
+    emergencyItems: [
+      ["Tisnova linka", "112", "tel:112"],
+      ["Policie", "192", "tel:192"],
+      ["Zachranna sluzba", "194", "tel:194"],
+    ],
+    host: "Podpora hostitele",
+  },
+  pl: {
+    back: "Villa Beti",
+    eyebrow: "Kontakt",
+    title: "Potrzebujesz czegos?",
+    intro:
+      "Napisz lub zadzwon do gospodarza w sprawie restauracji, zakupow albo wszystkiego, co moze ulepszyc pobyt.",
+    call: "Zadzwon do gospodarza",
+    whatsapp: "WhatsApp",
+    emergency: "Numery alarmowe",
+    emergencyItems: [
+      ["Alarmowy", "112", "tel:112"],
+      ["Policja", "192", "tel:192"],
+      ["Pogotowie", "194", "tel:194"],
+    ],
+    host: "Pomoc gospodarza",
+  },
+  es: {
+    back: "Villa Beti",
+    eyebrow: "Contacto",
+    title: "Necesitas algo?",
+    intro:
+      "Escribe o llama al anfitrion para restaurantes, compras o cualquier cosa que mejore tu estancia.",
+    call: "Llamar al anfitrion",
+    whatsapp: "WhatsApp",
+    emergency: "Numeros de emergencia",
+    emergencyItems: [
+      ["Emergencia", "112", "tel:112"],
+      ["Policia", "192", "tel:192"],
+      ["Ambulancia", "194", "tel:194"],
+    ],
+    host: "Soporte del anfitrion",
+  },
+  be: {
+    back: "Villa Beti",
+    eyebrow: "Contact",
+    title: "Iets nodig?",
+    intro:
+      "Stuur een bericht of bel de host voor restaurants, boodschappen of alles wat uw verblijf beter maakt.",
+    call: "Host bellen",
+    whatsapp: "WhatsApp",
+    emergency: "Noodnummers",
+    emergencyItems: [
+      ["Noodgeval", "112", "tel:112"],
+      ["Politie", "192", "tel:192"],
+      ["Ambulance", "194", "tel:194"],
+    ],
+    host: "Host support",
+  },
+  nl: {
+    back: "Villa Beti",
+    eyebrow: "Contact",
+    title: "Iets nodig?",
+    intro:
+      "Stuur een bericht of bel de host voor restaurants, boodschappen of alles wat je verblijf beter maakt.",
+    call: "Host bellen",
+    whatsapp: "WhatsApp",
+    emergency: "Noodnummers",
+    emergencyItems: [
+      ["Noodgeval", "112", "tel:112"],
+      ["Politie", "192", "tel:192"],
+      ["Ambulance", "194", "tel:194"],
+    ],
+    host: "Host support",
+  },
+  sq: {
+    back: "Villa Beti",
+    eyebrow: "Kontakt",
+    title: "Ju duhet dicka?",
+    intro:
+      "Shkruani ose telefononi hostin per restorante, ushqime ose cdo gje qe e ben qendrimin me te mire.",
+    call: "Telefono hostin",
+    whatsapp: "WhatsApp",
+    emergency: "Numrat emergjent",
+    emergencyItems: [
+      ["Emergjence", "112", "tel:112"],
+      ["Policia", "192", "tel:192"],
+      ["Ambulanca", "194", "tel:194"],
+    ],
+    host: "Ndihma e hostit",
+  },
+  tr: {
+    back: "Villa Beti",
+    eyebrow: "Iletisim",
+    title: "Bir seye ihtiyaciniz var mi?",
+    intro:
+      "Restoranlar, alisveris veya konaklamanizi iyilestirecek her sey icin ev sahibine mesaj atin ya da arayin.",
+    call: "Ev sahibini ara",
+    whatsapp: "WhatsApp",
+    emergency: "Acil numaralar",
+    emergencyItems: [
+      ["Acil", "112", "tel:112"],
+      ["Polis", "192", "tel:192"],
+      ["Ambulans", "194", "tel:194"],
+    ],
+    host: "Ev sahibi destegi",
   },
   mk: {
     back: "Villa Beti",
@@ -42,6 +174,11 @@ const copy = {
     call: "Јави се",
     whatsapp: "WhatsApp",
     emergency: "Итни броеви",
+    emergencyItems: [
+      ["Итна помош", "112", "tel:112"],
+      ["Полиција", "192", "tel:192"],
+      ["Брза помош", "194", "tel:194"],
+    ],
     host: "Поддршка",
   },
 } satisfies Record<Lang, {
@@ -52,8 +189,9 @@ const copy = {
   call: string;
   whatsapp: string;
   emergency: string;
+  emergencyItems: string[][];
   host: string;
-}>;
+}>);
 
 function PhoneIcon() {
   return (
@@ -99,14 +237,14 @@ export default async function ContactPage({
             <MessageIcon />
           </span>
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#9d755d]">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#9d755d]">
               {t.eyebrow}
             </p>
             <p className="mt-1 text-sm font-bold text-[#6a5b4d]">{t.host}</p>
           </div>
         </div>
 
-        <h1 className="mt-6 text-[2.45rem] font-black leading-[0.95] tracking-tight">
+        <h1 className="mt-6 font-sans text-[2.45rem] font-bold leading-[0.95]">
           {t.title}
         </h1>
         <p className="mt-4 text-[15px] font-medium leading-7 text-[#675b50]">{t.intro}</p>
@@ -114,14 +252,14 @@ export default async function ContactPage({
         <div className="mt-6 grid gap-3">
           <a
             href={`tel:${hostPhone}`}
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#211f1c] px-5 py-5 text-sm font-black text-white shadow-sm"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#211f1c] px-5 py-5 text-sm font-bold text-white shadow-sm"
           >
             <PhoneIcon />
             {t.call}
           </a>
           <a
             href={hostWhatsapp}
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#5a7a63] px-5 py-5 text-sm font-black text-white shadow-sm"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#5a7a63] px-5 py-5 text-sm font-bold text-white shadow-sm"
           >
             <MessageIcon />
             {t.whatsapp}
@@ -134,18 +272,18 @@ export default async function ContactPage({
           <span className="grid h-11 w-11 place-items-center rounded-full bg-[#f0e4d7] text-[#7d6047]">
             <AlertIcon />
           </span>
-          <h2 className="text-2xl font-black">{t.emergency}</h2>
+          <h2 className="text-2xl font-bold">{t.emergency}</h2>
         </div>
         <div className="mt-5 space-y-3">
-          {emergency.map((item) => (
+          {t.emergencyItems.map(([label, value, href]) => (
             <a
-              key={item.label}
-              href={item.href}
+              key={label}
+              href={href}
               className="flex items-center justify-between rounded-2xl bg-white px-4 py-4 shadow-sm ring-1 ring-[#eee4da]"
             >
-              <span className="font-bold">{item.label}</span>
-              <span className="rounded-full bg-[#211f1c] px-3 py-1 text-lg font-black text-white">
-                {item.value}
+              <span className="font-bold">{label}</span>
+              <span className="rounded-full bg-[#211f1c] px-3 py-1 text-lg font-bold text-white">
+                {value}
               </span>
             </a>
           ))}
